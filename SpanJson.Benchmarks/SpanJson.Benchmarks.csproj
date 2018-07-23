@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.10.14" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.11.0" />
     <PackageReference Include="Jil" Version="2.16.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="System.Memory" Version="4.5.0" />
@@ -39,6 +39,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>BclBenchmark.tt</DependentUpon>
     </Compile>
+    <Compile Update="ModelBenchmark.Attributes.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ModelBenchmark.Attributes.tt</DependentUpon>
+    </Compile>
     <Compile Update="ModelBenchmark.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -57,6 +62,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="ModelBenchmark.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelBenchmark.cs</LastGenOutput>
+    </None>
     <None Update="ReaderBenchmark.tt">
       <LastGenOutput>ReaderBenchmark.cs</LastGenOutput>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -69,9 +78,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BclBenchmark.cs</LastGenOutput>
     </None>
-    <None Update="ModelBenchmark.tt">
+    <None Update="ModelBenchmark.Attributes.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelBenchmark.cs</LastGenOutput>
+      <LastGenOutput>ModelBenchmark.Attributes.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
