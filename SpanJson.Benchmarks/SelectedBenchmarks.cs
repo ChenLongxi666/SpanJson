@@ -9,9 +9,7 @@ using SpanJson.Shared.Models;
 
 namespace SpanJson.Benchmarks
 {
-    [MemoryDiagnoser]
-    //[ShortRunJob]
-    [DisassemblyDiagnoser(printIL: true, recursiveDepth: 2)]
+    [Config(typeof(MyConfig))]
     public class SelectedBenchmarks
     {
         private static readonly ExpressionTreeFixture ExpressionTreeFixture = new ExpressionTreeFixture();
