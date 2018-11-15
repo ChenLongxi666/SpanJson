@@ -10,8 +10,8 @@ namespace SpanJson.Benchmarks
     {
         public MyConfig()
         {
-            Add(Job.Default.With(CustomCoreClrToolchain.CreateBuilder().UseCoreClrNuGet("3.0.0-preview1-27101-02").UseCoreFxNuGet("4.6.0-preview1-27101-02")
-                .RuntimeFrameworkVersion("netcoreapp3.0").ToToolchain()));
+            Add(Job.Default.WithUnrollFactor(2).With(CustomCoreClrToolchain.CreateBuilder().UseCoreClrNuGet("3.0.0-preview1-27101-02").UseCoreFxNuGet("4.6.0-preview1-27101-02")
+                .TargetFrameworkMoniker("netcoreapp3.0").ToToolchain()));
             Add(MemoryDiagnoser.Default);
             Set(new DefaultOrderer(SummaryOrderPolicy.Default, MethodOrderPolicy.Alphabetical));
         }
